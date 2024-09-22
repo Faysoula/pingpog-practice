@@ -49,11 +49,11 @@ class Ball extends Sprite {
       ) {
         this.vx *= -1;
       }
-      if(this.x + this.radius >= canvas.width){
+      if(this.x + this.radius >= canvas.width){//ball has hit the right wall
         this.scorep1.update();
         this.reset();
       }
-        if(this.x - this.radius <= 0){
+        if(this.x - this.radius <= 0){// ball has hit the left wall
             this.scorep2.update();
             this.reset
     }
