@@ -24,15 +24,18 @@ class Ball extends Sprite {
       this.x += this.vx;
       this.y += this.vy;
 
-      if (this.y + this.radius >= this.canvas.height || this.y - this.radius < 0) {
+      if (
+        this.y + this.radius >= this.canvas.height ||
+        this.y - this.radius < 0
+      ) {
         this.vy *= -1;
       }
 
       var playerOne = sprites.find(
-        (sprite) => sprite instanceof Paddle && sprite.x > this.canvas.width
+        (sprite) => sprite instanceof Paddle && sprite.x < this.canvas.width / 2
       );
       var playertwo = sprites.find(
-        (sprite) => sprite instanceof Paddle && sprite.x < this.canvas.width
+        (sprite) => sprite instanceof Paddle && sprite.x > this.canvas.width / 2
       );
 
       if (playerOne) {
@@ -58,12 +61,12 @@ class Ball extends Sprite {
       }
       if (this.x + this.radius >= this.canvas.width) {
         //ball has hit the right wall
-        this.scorep1.update();
+        this.scorep1.score++;
         this.reset();
       }
       if (this.x - this.radius <= 0) {
         // ball has hit the left wall
-        this.scorep2.update();
+        this.scorep2.score++;
         this.reset();
       }
     }

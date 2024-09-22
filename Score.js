@@ -7,9 +7,6 @@ class Score extends Sprite{
         this.label = label;
     }
 
-    update(){
-        this.score += 1;
-    }
 
     draw(ctx){
         ctx.font = "30px Arial";
