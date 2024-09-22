@@ -1,12 +1,38 @@
-var game = new game();
+// Game initialization
+const game = new Game();
 
-var score1 = new Score(10, 30, "Player 1");
-var score2 = new Score(680, 30, "Player 2");
+const score1 = new Score(10, 30, "Player 1");
+const score2 = new Score(600, 30, "Player 2");
 
-var ball = new ball(400, 300, 10, "purple", score1, score2);
+const ball = new Ball(
+  game.canvas.width / 2,
+  game.canvas.height / 2,
+  10,
+  "purple",
+  score1,
+  score2,
+  game.canvas
+);
 
-var p1 = new Paddle(30, 250, 100, 20, 5, { up: "w", down: "s" });
-var p2 = new Paddle(760, 250, 100, 20, 5, { up: "ArrowUp", down: "ArrowDown" });
+const p1 = new Paddle(
+  30,
+  game.canvas.height / 2 - 50,
+  100,
+  10,
+  5,
+  { up: "w", down: "s" },
+  game.canvas
+);
+
+const p2 = new Paddle(
+  game.canvas.width - 40,
+  game.canvas.height / 2 - 50,
+  100,
+  10,
+  5,
+  { up: "ArrowUp", down: "ArrowDown" },
+  game.canvas
+);
 
 game.addSprite(p1);
 game.addSprite(p2);

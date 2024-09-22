@@ -4,8 +4,6 @@ class Score extends Sprite{
         this.x = x;
         this.y = y;
         this.score = 0;
-        this.font = "30px Arial";
-        this.fillStyle = "black";
         this.label = label;
     }
 
@@ -15,7 +13,7 @@ class Score extends Sprite{
 
     draw(ctx){
         ctx.font = "30px Arial";
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "black";
         ctx.fillText(`${ this.label } : ${ this.score }`, this.x, this.y);
     }
 }

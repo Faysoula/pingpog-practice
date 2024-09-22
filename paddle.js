@@ -1,27 +1,24 @@
 class Paddle extends Sprite{
-    constructor(x, y, height, width, speed, controls) {
+    constructor(x, y, height, width, speed, controls, canvas) {
+        super();
         this.x = x;
         this.y = y;
         this.height = height;
         this.width = width;
         this.speed = speed;
         this.controls = controls;
+        this.canvas = canvas;
     }
 
-    update(keys){
-        if(keys[this.controls.up]){
+    update(sprites, keys){
+        if(keys && keys[this.controls.up]){
             this.y -= this.speed;
         }
 
-        if(keys[this.controls.down]){
+        if(keys && keys[this.controls.down]){
             this.y += this.speed;
         }
-
-        if(this.y < 0){
-            this.y = 0;
-        }
-
-        this.y = Math.max(0, Math.min(this.y, canvas.height - this.height));
+        this.y = Math.max(0, Math.min(this.y, this.canvas.height - this.height));
     }
 
     draw(ctx){
