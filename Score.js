@@ -1,16 +1,13 @@
 class Score extends Sprite{
-    constructor(x, y, label){
+    constructor(elementId, label){
         super();
-        this.x = x;
-        this.y = y;
+        this.element= document.getElementById(elementId);
         this.score = 0;
         this.label = label;
     }
 
 
-    draw(ctx){
-        ctx.font = "30px Arial";
-        ctx.fillStyle = "black";
-        ctx.fillText(`${ this.label } : ${ this.score }`, this.x, this.y);
+    draw(){
+         this.element.textContent = `${this.label}: ${this.score}`;
     }
 }

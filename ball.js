@@ -78,6 +78,9 @@ class Ball extends Sprite {
     ctx.fillStyle = this.color;
     ctx.fill();
     ctx.closePath();
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
+      "--ball-color"
+    );
   }
 
   reset() {

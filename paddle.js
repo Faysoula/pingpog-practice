@@ -24,5 +24,6 @@ class Paddle extends Sprite{
     draw(ctx){
         ctx.fillStyle = "pink";
         ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--paddle-color');
     }
     }

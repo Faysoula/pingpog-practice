@@ -1,8 +1,8 @@
 // Game initialization
 const game = new Game();
 
-const score1 = new Score(10, 30, "Player 1");
-const score2 = new Score(600, 30, "Player 2");
+const score1 = new Score("score1", "Player 1");
+const score2 = new Score("score2", "Player 2");
 
 const ball = new Ball(
   game.canvas.width / 2,
